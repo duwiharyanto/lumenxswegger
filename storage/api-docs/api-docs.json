@@ -1,0 +1,325 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Techtalk BSI",
+        "description": "Techtalk BSI Swegger",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "201232646@uii.ac.id"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/",
+            "description": "Development API"
+        }
+    ],
+    "paths": {
+        "/public/api/v1/unit": {
+            "get": {
+                "tags": [
+                    "unit"
+                ],
+                "summary": "Halaman utama",
+                "description": "Menampilkan data unit",
+                "operationId": "unit",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "unit"
+                ],
+                "summary": "Menambah unit",
+                "description": "Menambah unit",
+                "operationId": "storeUnit",
+                "requestBody": {
+                    "description": "Create unit object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Unit"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Error Validation"
+                    }
+                }
+            }
+        },
+        "/public/api/v1/user": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Halaman utama",
+                "description": "Menampilkan data user",
+                "operationId": "user",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Menambah user",
+                "description": "Menambah user",
+                "operationId": "storeUser",
+                "requestBody": {
+                    "description": "Create user object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Error Validation"
+                    }
+                }
+            }
+        },
+        "/public/api/v1/user/{id}": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Menampilkan data berdasarkan id",
+                "description": "Menampilkan data user",
+                "operationId": "showUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id User",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "bad request"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Update data user",
+                "description": "Update data user",
+                "operationId": "updateUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID user",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Create user object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Error Validation"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Hapus data berdasarkan id",
+                "description": "Hapus data user",
+                "operationId": "deleteUser",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id User",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "bad request"
+                    }
+                }
+            }
+        },
+        "/public/api/v1/user-cari": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Mencari data berdasarkan nama",
+                "description": "Menampilkan data user",
+                "operationId": "searchUser",
+                "parameters": [
+                    {
+                        "name": "nama",
+                        "in": "query",
+                        "description": "Nama user",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "bad request"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Unit": {
+                "title": "Unit model",
+                "description": "Unit model",
+                "properties": {
+                    "unit": {
+                        "title": "Nama unit",
+                        "description": "Nama unit",
+                        "type": "string"
+                    },
+                    "keterangan": {
+                        "title": "Keterangan Unit",
+                        "description": "Keterangan Unit",
+                        "type": "string",
+                        "format": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "User": {
+                "title": "User model",
+                "description": "User model",
+                "properties": {
+                    "name": {
+                        "title": "nama user",
+                        "description": "Nama User",
+                        "type": "string"
+                    },
+                    "password": {
+                        "title": "Password user",
+                        "description": "Password User",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "email": {
+                        "title": "Email user",
+                        "description": "Email",
+                        "type": "string",
+                        "format": "email"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "requestBodies": {
+            "UserArray": {
+                "description": "List of user object",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    }
+                }
+            },
+            "UnitArray": {
+                "description": "List of user object",
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/components/schemas/Unit"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "user",
+            "description": "Endpoint User",
+            "externalDocs": {
+                "description": "Informasi lengkap kunjungi",
+                "url": "http://swagger.io"
+            }
+        },
+        {
+            "name": "unit",
+            "description": "Endpoint Unit",
+            "externalDocs": {
+                "description": "Informasi lengkap kunjungi",
+                "url": "http://swagger.io"
+            }
+        }
+    ],
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}
