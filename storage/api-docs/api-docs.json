@@ -11,7 +11,7 @@
     },
     "servers": [
         {
-            "url": "https: /app-undangan-online.herokuapp.com/",
+            "url": "https://app-undangan-online.herokuapp.com/",
             "description": "Development API"
         }
     ],
