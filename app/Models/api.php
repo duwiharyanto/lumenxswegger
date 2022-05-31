@@ -34,7 +34,7 @@
  * )
 * @OA\Server(
  *     description="Development API",
- *     url="http://localhost:8000/"
+ *     url="https://app-undangan-online.herokuapp.com/"
  * )
  * @OA\ExternalDocumentation(
  *     description="Find out more about Swagger",
