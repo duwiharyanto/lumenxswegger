@@ -26,7 +26,7 @@ $router->group(['prefix' => 'public/api/v1'], function () use ($router) {
     $router->put('/user/{id}', 'UserController@update');
     $router->delete('/user/{id}', 'UserController@delete');
 
-    $router->get('/unit', 'UnitController@index');
+    $router->get('/unit', 'UnitContrxoller@index');
 
     $router->post('/unit', 'UnitController@store');
 

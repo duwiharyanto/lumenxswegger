@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Techtalk BSI",
-        "description": "Techtalk BSI Swegger",
+        "title": "Lumen X Swegger",
+        "description": "Lumen X Swegger",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
             "email": "201232646@uii.ac.id"
@@ -301,14 +301,6 @@
         }
     },
     "tags": [
-        {
-            "name": "user",
-            "description": "Endpoint User",
-            "externalDocs": {
-                "description": "Informasi lengkap kunjungi",
-                "url": "http://swagger.io"
-            }
-        },
         {
             "name": "unit",
             "description": "Endpoint Unit",

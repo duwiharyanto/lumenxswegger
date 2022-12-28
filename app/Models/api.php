@@ -6,9 +6,9 @@
 
 /**
  * @OA\Info(
- *     description="Techtalk BSI Swegger",
+ *     description="Lumen X Swegger",
  *     version="1.0.0",
- *     title="Techtalk BSI",
+ *     title="Lumen X Swegger",
  *     termsOfService="http://swagger.io/terms/",
  *     @OA\Contact(
  *         email="201232646@uii.ac.id"
